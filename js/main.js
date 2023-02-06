@@ -10,9 +10,10 @@ const epicMix = [
     "You Don't Own Me",
     "Fast Car",
     "Run the World (Girls)",
-    "Superstition"
+    "Superstition",
+    "Cry Hard"
   ];
-  
+const total = document.querySelector(".total");  
 const button = document.querySelector(".show-list");
 const mixList = document.querySelector(".mix");
 
@@ -20,6 +21,7 @@ button.addEventListener('click',function(){
     mixInfo(epicMix);
     mixList.classList.remove("hide");
     button.classList.add("hide");
+    mixCount();
 });
 
 const mixInfo = function(mix){
@@ -29,3 +31,8 @@ const mixInfo = function(mix){
         mixList.append(listItem);
     }); 
 }; 
+const mixCount =function(){
+    const allSongs = document.querySelectorAll(".mix li");
+    let count = allSongs.length
+    total.innerText = ` ${count} GREAT SONGS! `
+}
